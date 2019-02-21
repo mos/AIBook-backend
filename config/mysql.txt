@@ -1,0 +1,49 @@
+Create table:
+
+1. user
+CREATE TABLE IF NOT EXISTS `user` (
+  `uid` int(5) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `token` varchar(32) DEFAULT NULL COMMENT '用户凭证token',
+  `uphone` varchar(11) NOT NULL COMMENT '用户手机号',
+  `uname` varchar(8) NOT NULL DEFAULT '老板' COMMENT '用户名称',
+  `upasswd` varchar(32) NOT NULL COMMENT '用户密码',
+  `ulogo` varchar(50) DEFAULT NULL COMMENT '用户Logo',
+  `unote` varchar(100) DEFAULT NULL COMMENT '用户签名',
+  `uplan` int(5) DEFAULT NULL COMMENT '用户月计划',
+  `ainame` varchar(10) NOT NULL DEFAULT '小管家' COMMENT 'ai名字',
+  `ailogo` varchar(50) DEFAULT NULL COMMENT 'ai头像',
+  `urole` varchar(20) DEFAULT NULL COMMENT '用户职业',
+  `usex` varchar(4) DEFAULT NULL COMMENT '性别',
+  PRIMARY KEY (`uid`),
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+2. consume
+CREATE TABLE IF NOT EXISTS `consume` (
+  `cid` int(10) NOT NULL AUTO_INCREMENT COMMENT '消费id',
+  `uid` int(10) NOT NULL COMMENT '用户id',
+  `ctime` varchar(15) NOT NULL COMMENT '时间',
+  `cmoney` float NOT NULL COMMENT '金额',
+  `ctype` varchar(5) NOT NULL COMMENT '收支',
+  `cthing` varchar(50) NOT NULL COMMENT '事件',
+  PRIMARY KEY (`cid`),
+  FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+3. wordbase
+CREATE TABLE IF NOT EXISTS `wordbase` (
+  `wid` int(5) NOT NULL AUTO_INCREMENT COMMENT '词库id',
+  `wword` varchar(20) NOT NULL COMMENT '词',
+  `wtype` varchar(5) NOT NULL COMMENT '收支',
+  `wclass` varchar(20) NOT NULL COMMENT '类别',
+  PRIMARY KEY (`wid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+4. learn
+CREATE TABLE IF NOT EXISTS `learn` (
+  `aid` int(5) NOT NULL AUTO_INCREMENT COMMENT '学习id',
+  `aword` varchar(20) NOT NULL COMMENT '词',
+  `atype` varchar(5) NOT NULL COMMENT '收支',
+  `aclass` varchar(20) NOT NULL COMMENT '类别',
+  `afq` int(2) NOT NULL DEFAULT 1 COMMENT '学习次数',
+  PRIMARY KEY (`aid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
