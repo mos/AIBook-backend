@@ -26,7 +26,7 @@
                 $wordbase->setWid($insert_id);
                 $return['disc'] = "添加成功";
                 $return['code'] = "100";
-                $return['data'] = $wordbase->array();
+                $return['data'] = $wordbase->getArray();
             }else {
                 $return['disc'] = "服务器更新出错";
                 $return['code'] = "500";

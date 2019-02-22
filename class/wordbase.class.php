@@ -12,7 +12,7 @@
          * 导出array
          * @return array
          */
-        public function array(){
+        public function getArray(){
             $arr = [
                 'wclass' => $this->wclass,
                 'wid' => $this->wid,

@@ -26,7 +26,7 @@
             if($db->update('wordbase', $wordbase)){
                 $return['disc'] = "更新成功";
                 $return['code'] = "100";
-                $return['data'] = $wordbase->array();
+                $return['data'] = $wordbase->getArray();
             }else {
                 $return['disc'] = "更新出错，wid=".$wid;
                 $return['code'] = "120";

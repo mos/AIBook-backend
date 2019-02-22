@@ -19,7 +19,7 @@
                 $learn = new Learn();
                 for ($i = 0; $i<$result->num_rows; $i++){
                     $learn->setLearn(mysqli_fetch_array($result));
-                    $return['data'][$i] = $learn->array();
+                    $return['data'][$i] = $learn->getArray();
                 }
             }else {
                 $return['disc'] = "查询到0条记录";

@@ -43,7 +43,7 @@ if(!empty($token)){
                 if($consume->getCthing() == null)$consume->setCthing($requeststr);  //当事件分析失败时，原句返回
                 $return['disc'] = "分析成功";
                 $return['code'] = "100";
-                $return['data'] = $consume->array();
+                $return['data'] = $consume->getArray();
             }else{
                 $return['disc'] = "分析成功，插入数据库失败";
                 $return['code'] = "120";

@@ -19,7 +19,7 @@
                 $wordbase = new Wordbase();
                 for ($i = 0; $i<$result->num_rows; $i++){
                     $wordbase->setWordbase(mysqli_fetch_array($result));
-                    $return['data'][$i] = $wordbase->array();
+                    $return['data'][$i] = $wordbase->getArray();
                 }
             }else {
                 $return['disc'] = "查询到0条记录";

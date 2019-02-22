@@ -38,7 +38,7 @@
                 
                 $return['disc'] = "注册成功";
                 $return['code'] = "100";
-                $return['data'] = $user->array();
+                $return['data'] = $user->getArray();
             }
             else{
                 $return['disc'] = "服务器新增数据出错";

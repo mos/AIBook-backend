@@ -20,7 +20,7 @@
         $sql = "select * from user where token='$token'";
         $result = $con->exec($sql);
         $user->setUser(mysqli_fetch_array($result));
-        //echo "<pre>";var_dump($user->array());
+        //echo "<pre>";var_dump($user->getArray());
         if($token == $user->getUser()['token']){ //验证token
             //获取数据库内容
             $uid = $user->getUid();
@@ -33,7 +33,7 @@
                 $consume = new Consume();
                 for ($i = 0; $i<$result->num_rows; $i++){
                     $consume->setConsume(mysqli_fetch_array($result));
-                    $return['data'][$i] = $consume->array();
+                    $return['data'][$i] = $consume->getArray();
                 }
             }else {
                 $return['disc'] = "uid=".$uid."查询到0条记录";

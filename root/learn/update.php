@@ -28,7 +28,7 @@
             if($db->update('learn', $learn)){
                 $return['disc'] = "更新成功";
                 $return['code'] = "100";
-                $return['data'] = $learn->array();
+                $return['data'] = $learn->getArray();
             }else {
                 $return['disc'] = "更新出错，aid=".$aid;
                 $return['code'] = "120";

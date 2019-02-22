@@ -40,7 +40,7 @@
                 if($db->update('user',$user)){
                     $return['disc'] = "登录成功";
                     $return['code'] = "100";
-                    $return['data'] = $user->array();
+                    $return['data'] = $user->getArray();
                 }
                 else {
                     $return['disc'] = "服务器更新记录token发生错误";

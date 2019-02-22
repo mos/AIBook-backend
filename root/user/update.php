@@ -30,7 +30,7 @@
         $sql = "select * from user where token='$token'";
         $result = $con->exec($sql);
         $user->setUser(mysqli_fetch_array($result));
-        //echo "<pre>";var_dump($user->array());
+        //echo "<pre>";var_dump($user->getArray());
         if($token == $user->getUser()['token']){
             $db = new DB();
             $flag = true;//用于标志手机号和密码修改是否出错
@@ -85,7 +85,7 @@
                 if($db->update('user',$user)){
                     $return['disc'] = "更新成功";
                     $return['code'] = "100";
-                    $return['data'] = $user->array();
+                    $return['data'] = $user->getArray();
                 }else {
                     $return['disc'] = "服务器更新出错";
                     $return['code'] = "500";

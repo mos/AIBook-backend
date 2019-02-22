@@ -31,7 +31,7 @@
          * 导出array
          * @return array
          */
-        public function array(){
+        public function getArray(){
             $arr = [
                 'uid'=>$this->uid,
                 'usex'=>$this->usex,

@@ -45,7 +45,7 @@
          * 导出array
          * @return array
          */
-        public function array(){
+        public function getArray(){
             $arr = [
                 'aclass' => $this->aclass,
                 'afq' => $this->afq,

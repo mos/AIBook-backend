@@ -31,7 +31,7 @@
                 $wordbase = $learn->doEnd();
                 //更新词库
                 $curl = new curlTo($isadmin, 'root/wordbase/insert.php');
-                $res = $curl->send($wordbase->array());   
+                $res = $curl->send($wordbase->getArray());   
                 //curl执行后，wordbase那边有输出，但这边会输出空数组。因此打算两边都去掉输出。输出仅调试时开启
                 //echo "</pre>";var_dump($res);
                 //$res = json_decode($res);
