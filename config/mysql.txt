@@ -2,10 +2,10 @@ Create table:
 
 1. user
 CREATE TABLE IF NOT EXISTS `user` (
-  `uid` int(5) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `uid` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户id',
   `token` varchar(32) DEFAULT NULL COMMENT '用户凭证token',
   `uphone` varchar(11) NOT NULL COMMENT '用户手机号',
-  `uname` varchar(8) NOT NULL DEFAULT '老板' COMMENT '用户名称',
+  `uname` varchar(8) NOT NULL DEFAULT '未设置' COMMENT '用户名称',
   `upasswd` varchar(32) NOT NULL COMMENT '用户密码',
   `ulogo` varchar(50) DEFAULT NULL COMMENT '用户Logo',
   `unote` varchar(100) DEFAULT NULL COMMENT '用户签名',
